@@ -20,13 +20,21 @@ object FileHelper {
             .map(String::trim)
             .filter(String::isNotEmpty)
     }
+
+    fun readFullFile(filename: String): String {
+        return File(ClassLoader.getSystemResource(filename).file)
+            .readText()
+            .trim()
+    }
 }
 
 abstract class Day(inputPath: String) {
-    val input: List<String>
+    val splitInput: List<String>
+    val fullInput: String
 
     init {
-        this.input = FileHelper.readLines(inputPath)
+        this.splitInput = FileHelper.readLines(inputPath)
+        this.fullInput = FileHelper.readFullFile(inputPath)
     }
 
     abstract fun solve1()

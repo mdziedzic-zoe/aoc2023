@@ -38,7 +38,7 @@ class Day02 : Day("day02.txt") {
     }
 
     override fun solve1() {
-        val games = input.map { parseLine(it) }
+        val games = splitInput.map { parseLine(it) }
         var acc = 0
         games.forEach { g ->
             if (g.reveals.all { rev -> rev.first <= RL && rev.second <= GL && rev.third <= BL })
@@ -48,7 +48,7 @@ class Day02 : Day("day02.txt") {
     }
 
     override fun solve2() {
-        val games = input.map { parseLine(it) }
+        val games = splitInput.map { parseLine(it) }
         var acc = 0
         games.forEach { game ->
             var r = 0

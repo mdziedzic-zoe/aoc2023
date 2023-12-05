@@ -4,7 +4,7 @@ import kotlin.math.pow
 class Day04 : Day("day04.txt") {
     override fun solve1() {
 
-        val res = input.map { line ->
+        val res = splitInput.map { line ->
             val allnums = line.split(":")[1].split("|")
             val lnums = allnums[0].split(" ").filter { it.isNotEmpty() }.map(String::toInt).toSet()
             val rnums = allnums[1].split(" ").filter { it.isNotEmpty() }.map(String::toInt).toSet()
@@ -18,7 +18,7 @@ class Day04 : Day("day04.txt") {
     }
 
     override fun solve2() {
-        val cards = input.map { line ->
+        val cards = splitInput.map { line ->
             val id = line.split(":")[0].split(" ").filter { it.isNotEmpty() }[1].toInt()
 
             val allnums = line.split(":")[1].split("|")

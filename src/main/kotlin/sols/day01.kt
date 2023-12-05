@@ -4,7 +4,7 @@ class Day01 : Day("day01.txt") {
     override fun solve1() {
         var acc: Long = 0
         val l = (0..10).toList()
-        input.forEach { line ->
+        splitInput.forEach { line ->
             val leftDigit = l.map { d ->
                 line.indexOf(d.toString()) to d
             }
@@ -39,7 +39,7 @@ class Day01 : Day("day01.txt") {
         )
 
         var acc: Long = 0
-        input.forEach { line ->
+        splitInput.forEach { line ->
 
             val l1 = m.entries.flatMap {
                 val left = line.indexOf(it.key)
