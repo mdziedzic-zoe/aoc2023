@@ -1,6 +1,7 @@
 import sols.Day
 import kotlin.math.pow
 
+data class ScratchCard(val id: Int, val wins: Int)
 class Day04 : Day("day04.txt") {
     override fun solve1() {
 
@@ -51,21 +52,4 @@ class Day04 : Day("day04.txt") {
         }
         print(acc)
     }
-}
-
-fun solve41() {
-
-}
-
-data class ScratchCard(val id: Int, val wins: Int)
-
-fun solve42() {
-
-}
-
-fun solveDay4() {
-    println("Answer from part 2")
-    solve41()
-    println("Answer from part 2")
-    solve42()
 }
