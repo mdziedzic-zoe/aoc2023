@@ -8,5 +8,6 @@ fun main(args: Array<String>) {
     Day07().solve()
     Day08().solve()
     Day09().solve()
+    Day10().solve()
 }
 
