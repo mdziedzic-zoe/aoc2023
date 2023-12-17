@@ -15,5 +15,6 @@ fun main(args: Array<String>) {
     Day14().solve()
     Day15().solve()
     Day16().solve()
+    Day17().solve()
 }
 

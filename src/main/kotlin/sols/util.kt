@@ -2,6 +2,12 @@ package sols
 
 import java.io.File
 
+val FOUR_WAY_DIRS = listOf(
+    Pair(0, 1),
+    Pair(1, 0),
+    Pair(0, -1),
+    Pair(-1, 0),
+)
 val EIGHT_WAY_DIRS = listOf(
     Pair(-1, -1),
     Pair(0, -1),
