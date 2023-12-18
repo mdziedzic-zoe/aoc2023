@@ -18,6 +18,8 @@ val EIGHT_WAY_DIRS = listOf(
     Pair(1, 0),
     Pair(1, 1),
 )
+typealias Point = Pair<Int, Int>
+typealias LongPoint = Pair<Long, Long>
 
 object FileHelper {
     fun readLines(filename: String): List<String> {

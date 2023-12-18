@@ -1,9 +1,9 @@
 import sols.Day
+import sols.Point
 import java.util.*
 import kotlin.math.max
 import kotlin.math.min
 
-typealias Point = Pair<Int, Int>
 
 data class StepDirection(val dir: Char, val steps: Int)
 
