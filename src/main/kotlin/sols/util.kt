@@ -56,3 +56,26 @@ abstract class Day(inputPath: String) {
         println()
     }
 }
+
+fun gcd(x: Long, y: Long): Long {
+    var a = x
+    var b = y
+    while (b > 0) {
+        val temp = b
+        b = a % b
+        a = temp
+    }
+    return a
+}
+
+fun lcm(a: Long, b: Long): Long {
+    return a * (b / gcd(a, b))
+}
+
+fun lcm(input: List<Long>): Long {
+    var result = input[0]
+    for (i in 1 until input.size){
+        result = lcm(result, input[i])
+    }
+    return result
+}

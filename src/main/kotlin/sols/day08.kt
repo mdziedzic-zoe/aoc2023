@@ -1,4 +1,5 @@
 import sols.Day
+import sols.lcm
 
 
 class Day08 : Day("day08.txt") {
@@ -65,26 +66,5 @@ class Day08 : Day("day08.txt") {
         lcm(cycles.values.toList()).let { println(it) }
     }
 
-    private fun gcd(x: Long, y: Long): Long {
-        var a = x
-        var b = y
-        while (b > 0) {
-            val temp = b
-            b = a % b
-            a = temp
-        }
-        return a
-    }
 
-    private fun lcm(a: Long, b: Long): Long {
-        return a * (b / gcd(a, b))
-    }
-
-    private fun lcm(input: List<Long>): Long {
-        var result = input[0]
-        for (i in 1 until input.size){
-            result = lcm(result, input[i])
-        }
-        return result
-    }
 }

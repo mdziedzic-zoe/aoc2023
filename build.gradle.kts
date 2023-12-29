@@ -8,20 +8,29 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://repo.kotlin.link")
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation("space.kscience:kmath-polynomial:0.3.1-dev-5")
+    implementation("tools.aqua:z3-turnkey:4.12.2.1")
 }
 
 tasks.test {
     useJUnitPlatform()
 }
 
-kotlin {
-    jvmToolchain(8)
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs += "-Xcontext-receivers"
+    }
 }
 
-application {
-    mainClass.set("MainKt")
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of("17"))
+    }
 }
